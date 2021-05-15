@@ -22,6 +22,11 @@ public class CameraFollow : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if(followTransform == null)
+        {
+            return;
+        }
+
         float borderLeft = cameraLeftBorder.transform.position.x + cameraHalfWidth;
         float borderRight = cameraRightBorder.transform.position.x - cameraHalfWidth;
 
