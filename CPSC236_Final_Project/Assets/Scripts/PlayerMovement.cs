@@ -6,6 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
     
     public CharacterController2D controller;
+    public Rigidbody2D rb;
     public Animator animator;
     private bool isAttacking = false;
     public float runSpeed = 25f;
@@ -27,19 +28,10 @@ public class PlayerMovement : MonoBehaviour
             return;
         }
 
-        if (isAttacking)
-        {
-            isAttacking = false;
-        }
-
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             isAttacking = true;
             StartCoroutine(ToggleAttackAnimation());
-        }
-        else
-        {
-            isAttacking = false;
         }
 
         horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
@@ -76,11 +68,13 @@ public class PlayerMovement : MonoBehaviour
     {
         if (isAttacking)
         {
+            isAttacking = true;
             animator.SetBool("Attack", true);
-            yield return new WaitForSeconds(0.7f);
+            yield return new WaitForSeconds(0.9f);
         }
         animator.SetBool("Attack", false);
         yield return new WaitForEndOfFrame();
+        isAttacking = false;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -93,6 +87,11 @@ public class PlayerMovement : MonoBehaviour
             {
                 Debug.Log("Is colliding and attacking");
                 Destroy(collision.gameObject);
+            }
+            else
+            {
+                Vector2 bounceVector = new Vector2(-10, 10);
+                rb.AddForce(bounceVector, ForceMode2D.Impulse);
             }
         }
     }

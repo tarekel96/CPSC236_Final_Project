@@ -9907,6 +9907,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 1685721541}
+  rb: {fileID: 1685721539}
   animator: {fileID: 1685721544}
   runSpeed: 25
   hasJumpPotion: 0
@@ -9984,7 +9985,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75a7b946b23a845abbe5c2777507c3ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 1685721539}
   maxHealth: 100
   currentHealth: 0
   healthBar: {fileID: 1272099838}
