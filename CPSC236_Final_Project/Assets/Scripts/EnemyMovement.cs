@@ -53,7 +53,7 @@ public class EnemyMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(this == null)
+        if(this == null || player == null)
         {
             return;
         }

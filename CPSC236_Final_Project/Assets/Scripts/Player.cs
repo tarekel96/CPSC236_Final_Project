@@ -34,9 +34,19 @@ public class Player : MonoBehaviour
 
     void Update()
     {
+        if(this == null)
+        {
+            return;
+        }
+
         if (Input.GetKeyDown(KeyCode.Space))
         {
             TakeDamage(20);
+        }
+
+        if(currentHealth == 0)
+        {
+            Destroy(this.gameObject);
         }
         //animator.SetFloat("Speed", (Mathf.Abs(targetPosition.x - gameObject.transform.position.x)));
 
