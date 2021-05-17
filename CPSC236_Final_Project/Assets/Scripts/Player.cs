@@ -39,10 +39,10 @@ public class Player : MonoBehaviour
             return;
         }
 
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            TakeDamage(20);
-        }
+        //if (Input.GetKeyDown(KeyCode.Space))
+        //{
+        //    TakeDamage(20);
+        //}
 
         if(currentHealth == 0)
         {
@@ -70,7 +70,7 @@ public class Player : MonoBehaviour
         //    targetPosition.y - gameObject.transform.position.y);
     }
 
-    void TakeDamage(int damage)
+    public void TakeDamage(int damage)
     {
         currentHealth -= damage;
 

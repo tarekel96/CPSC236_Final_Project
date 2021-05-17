@@ -11,7 +11,7 @@ public class EnemyMovement : MonoBehaviour
     public float timerMax = 25f;
 
     // player ~ user
-    public GameObject player;
+    public Player player;
 
     // vars for enemy bullets
     //private int numOfBullets = 0;
@@ -42,7 +42,6 @@ public class EnemyMovement : MonoBehaviour
         latestDirectionChangeTime = 0f;
         calcuateNewMovementVector();
 
-        player = GameObject.FindGameObjectWithTag("Player");
         rb = GetComponent<Rigidbody2D>();
         rb.velocity = new Vector2(moveSpeed, moveSpeed);
         canAttackPlayer = false;
@@ -131,8 +130,9 @@ public class EnemyMovement : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            GameObject.Destroy(this.gameObject);
-            GameObject.Destroy(collision.gameObject);
+            player.TakeDamage(20);
+            //GameObject.Destroy(this.gameObject);
+            //playerScript;
         }
     }
 

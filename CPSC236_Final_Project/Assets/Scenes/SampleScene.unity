@@ -634,7 +634,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timerMin: 5
   timerMax: 25
-  player: {fileID: 1685721535}
+  player: {fileID: 1685721543}
   canAttackPlayer: 0
 --- !u!61 &619955091
 BoxCollider2D:
