@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
-    private Rigidbody2D rb;
+    public Rigidbody2D rb;
 
     // vars for spawning enemies
     public float timerMin = 5f;
@@ -12,7 +12,6 @@ public class EnemyMovement : MonoBehaviour
 
     // player ~ user
     public Player player;
-
     // vars for enemy bullets
     //private int numOfBullets = 0;
     //private int MAX_NUM_OF_BULLETS = 3;
@@ -128,13 +127,16 @@ public class EnemyMovement : MonoBehaviour
     // logic handling enemy collisions
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.CompareTag("Player"))
         {
+            Debug.Log("Colliding");
+            Vector2 bounceVector = new Vector2(-5, 5);
+            rb.AddForce(bounceVector, ForceMode2D.Impulse);
+
             player.TakeDamage(20);
-            //GameObject.Destroy(this.gameObject);
-            //playerScript;
         }
     }
+
 
     //void SpawnBullet()
     //{

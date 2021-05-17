@@ -5,7 +5,7 @@ using UnityEngine.EventSystems;
 
 public class Player : MonoBehaviour
 {
-    //public Rigidbody2D rb;
+    public Rigidbody2D rb;
     //public float moveSpeed = 6f;
     //public Animator animator;
 
@@ -26,10 +26,6 @@ public class Player : MonoBehaviour
     {
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
-        //firstClickTime = 0f;
-        //timeBetweenClicks = 0.2f;
-        //clickCounter = 0;
-        //coroutineAllowed = true;
     }
 
     void Update()
@@ -39,35 +35,11 @@ public class Player : MonoBehaviour
             return;
         }
 
-        //if (Input.GetKeyDown(KeyCode.Space))
-        //{
-        //    TakeDamage(20);
-        //}
 
         if(currentHealth == 0)
         {
             Destroy(this.gameObject);
         }
-        //animator.SetFloat("Speed", (Mathf.Abs(targetPosition.x - gameObject.transform.position.x)));
-
-        //// set the mouse position
-        //if (Input.GetKeyDown(KeyCode.Mouse0))
-        //{
-        //    clickCounter++;
-        //    targetPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        //}
-        //if (clickCounter == 1 && coroutineAllowed)
-        //{
-        //    moveSpeed = 6;
-        //    firstClickTime = Time.time;
-        //    StartCoroutine(DoubleClickDetection());
-        //}
-
-
-        //// relative poistion of the target based upon the current position
-        //relativePosition = new Vector2(
-        //    targetPosition.x - gameObject.transform.position.x,
-        //    targetPosition.y - gameObject.transform.position.y);
     }
 
     public void TakeDamage(int damage)
@@ -77,37 +49,13 @@ public class Player : MonoBehaviour
         healthBar.SetHealth(currentHealth);
     }
 
-    //private IEnumerator DoubleClickDetection()
-    //{
-    //    coroutineAllowed = false;
-    //    while (Time.time < firstClickTime + timeBetweenClicks)
-    //    {
-    //        if (clickCounter == 2)
-    //        {
-    //            Debug.Log("Double Click");
-    //            moveSpeed = 12;
-    //            yield return new WaitForSeconds(1.5f); // give player 2x speed for 1.5 seconds
-    //        }
-    //        else
-    //        {
-    //            yield return new WaitForEndOfFrame();
-    //        }
-
-    //    }
-    //    clickCounter = 0;
-    //    firstClickTime = 0f;
-    //    coroutineAllowed = true;
-    //}
-
-
-    //void FixedUpdate()
-    //{
-    //    Move();
-    //}
-
-    //void Move()
-    //{
-    //    transform.position = Vector2.MoveTowards(transform.position, targetPosition, Time.deltaTime * moveSpeed);
-    //}
-
+    // logic handling player-enemy collisions
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            Vector2 bounceVector = new Vector2(-10, 10);
+            rb.AddForce(bounceVector, ForceMode2D.Impulse);
+        }
+    }
 }
