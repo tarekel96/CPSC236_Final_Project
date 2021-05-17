@@ -36,8 +36,10 @@ public class PlayerMovement : MonoBehaviour
         {
             isAttacking = true;
             StartCoroutine(ToggleAttackAnimation());
-            //isAttacking = false;
-            //StartCoroutine(ToggleAttackAnimation());
+        }
+        else
+        {
+            isAttacking = false;
         }
 
         horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
@@ -79,5 +81,19 @@ public class PlayerMovement : MonoBehaviour
         }
         animator.SetBool("Attack", false);
         yield return new WaitForEndOfFrame();
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            Debug.Log("Is colliding");
+
+            if (Input.GetKeyDown(KeyCode.Mouse0) || isAttacking)
+            {
+                Debug.Log("Is colliding and attacking");
+                Destroy(collision.gameObject);
+            }
+        }
     }
 }

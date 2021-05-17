@@ -129,7 +129,6 @@ public class EnemyMovement : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            Debug.Log("Colliding");
             Vector2 bounceVector = new Vector2(-5, 5);
             rb.AddForce(bounceVector, ForceMode2D.Impulse);
 
