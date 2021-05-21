@@ -77,6 +77,8 @@ public class Level3_PlayerMovement : MonoBehaviour
             else
             {
                 enemy.GetComponent<Boss>().TakeDamage(attackDamage);
+                //StartCoroutine(DisableCollider(enemy));
+                //boss.GetComponent<Collider2D>().enabled = false;
             }
 
         }
@@ -107,5 +109,11 @@ public class Level3_PlayerMovement : MonoBehaviour
             jumpFlag = true;
         }
     }
+
+    //IEnumerator DisableCollider(Boss boss)
+    //{
+    //    boss.GetComponent<Collider2D>().enabled = false;
+    //    yield return new WaitForSeconds(1.5f);
+    //}
 
 }

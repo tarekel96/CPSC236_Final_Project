@@ -16,7 +16,7 @@ using UnityEngine;
 
 public class NinaPlayerMovement : MonoBehaviour
 {
-    public CharacterController2D controller;
+    public Level2_CharacterController2D controller;
     public Rigidbody2D rb;
     public Animator animator;
     public AudioClip jumpClip;
@@ -58,6 +58,7 @@ public class NinaPlayerMovement : MonoBehaviour
 
         if (Input.GetButtonDown("Jump"))
         {
+            //Debug.Log("I am jumping");
             AudioSource.PlayClipAtPoint(jumpClip, transform.position);
             animator.SetBool("IsJumping", true);
             jump = true;
