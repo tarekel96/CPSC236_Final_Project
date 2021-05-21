@@ -1,0 +1,656 @@
+fileFormatVersion: 2
+guid: cf1867620ef884b708a79187658d0894
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8272913275950422312
+    second: Attack From Idle_0
+  - first:
+      213: 272422326968896828
+    second: Attack From Idle_1
+  - first:
+      213: -8114095330738618408
+    second: Attack From Idle_2
+  - first:
+      213: -1494656142573693615
+    second: Attack From Idle_3
+  - first:
+      213: 1502971283818325992
+    second: Attack From Idle_4
+  - first:
+      213: -136289673413436110
+    second: Attack From Idle_5
+  - first:
+      213: 5492003903130915820
+    second: Attack From Idle_6
+  - first:
+      213: -3117354057327084876
+    second: Attack From Idle_7
+  - first:
+      213: -1467867641193387965
+    second: Attack From Idle_8
+  - first:
+      213: 809184532527891893
+    second: Attack From Idle_9
+  - first:
+      213: 7185750205744713033
+    second: Attack From Idle_10
+  - first:
+      213: -77707463503746016
+    second: Attack From Idle_11
+  - first:
+      213: -3093088811317864777
+    second: Attack From Idle_12
+  - first:
+      213: -4246082729933383158
+    second: Attack From Idle_13
+  - first:
+      213: 730953854923664782
+    second: Attack From Idle_14
+  - first:
+      213: -2423571880073256264
+    second: Attack From Idle_15
+  - first:
+      213: 7465454762517704019
+    second: Attack From Idle_16
+  - first:
+      213: 278083114247908360
+    second: Attack From Idle_17
+  - first:
+      213: -9020316735186729594
+    second: Attack From Idle_18
+  - first:
+      213: -8191687008429848085
+    second: Attack From Idle_19
+  - first:
+      213: -6247462780588988478
+    second: Attack From Idle_20
+  - first:
+      213: -4466398625764886334
+    second: Attack From Idle_21
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: tvOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Attack From Idle_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 624
+        width: 72.5
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82953aeeaca4fc270800000000000000
+      internalID: 8272913275950422312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack From Idle_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 576
+        width: 72.5
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3dcddbb9a6d7c300800000000000000
+      internalID: 272422326968896828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack From Idle_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 528
+        width: 72.5
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8df3ba97941f46f80800000000000000
+      internalID: -8114095330738618408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack From Idle_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 480
+        width: 72.5
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1551a88482ae14be0800000000000000
+      internalID: -1494656142573693615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack From Idle_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 432
+        width: 72.5
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e7aa976b60abd410800000000000000
+      internalID: 1502971283818325992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack From Idle_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 384
+        width: 72.5
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23d53ad934dcb1ef0800000000000000
+      internalID: -136289673413436110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack From Idle_6
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 384
+        width: 72.5
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce35d27b374873c40800000000000000
+      internalID: 5492003903130915820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack From Idle_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 336
+        width: 72.5
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ba75e5500fecb4d0800000000000000
+      internalID: -3117354057327084876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack From Idle_8
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 336
+        width: 72.5
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 348a06d482611abe0800000000000000
+      internalID: -1467867641193387965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack From Idle_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 288
+        width: 72.5
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b5c01b8b0dca3b00800000000000000
+      internalID: 809184532527891893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack From Idle_10
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 288
+        width: 72.5
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94d8a1a8db9e8b360800000000000000
+      internalID: 7185750205744713033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack From Idle_11
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 240
+        width: 72.5
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02c6671497debeef0800000000000000
+      internalID: -77707463503746016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack From Idle_12
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 240
+        width: 72.5
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b6d9ae2d142315d0800000000000000
+      internalID: -3093088811317864777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack From Idle_13
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 192
+        width: 72.5
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0a566bf042e215c0800000000000000
+      internalID: -4246082729933383158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack From Idle_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 144
+        width: 72.5
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8d6de588aed42a00800000000000000
+      internalID: 730953854923664782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack From Idle_15
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 144
+        width: 72.5
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b2ab98373ebd5ed0800000000000000
+      internalID: -2423571880073256264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack From Idle_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 96
+        width: 72.5
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35dad968d8f9a9760800000000000000
+      internalID: 7465454762517704019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack From Idle_17
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 96
+        width: 72.5
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80ce7ca7e13fbd300800000000000000
+      internalID: 278083114247908360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack From Idle_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 48
+        width: 72.5
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6850fa598b561d280800000000000000
+      internalID: -9020316735186729594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack From Idle_19
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 48
+        width: 72.5
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be94b573118415e80800000000000000
+      internalID: -8191687008429848085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack From Idle_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 72.5
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c7e48793bd8c49a0800000000000000
+      internalID: -6247462780588988478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack From Idle_21
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 0
+        width: 72.5
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c8bdf52d1a2402c0800000000000000
+      internalID: -4466398625764886334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

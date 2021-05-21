@@ -1,96 +1,59 @@
-﻿using System.Collections;
+﻿// Tarek El Hajjaoui, Nina Valdez, Joshua Wisdom
+// CPSC 236-03
+// elhaj102@mail.chapman.edu, divaldez@chapman.edu, jowisdom@chapman.edu
+// Final Project: Untitled Platformer
+// This is our own work, we did not cheat on this assignment
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
+
+/// <summary>
+/// This script controls player health, when enemy collides with player, and when player dies
+/// </summary
 
 public class Player : MonoBehaviour
 {
-    public Rigidbody2D rb;
-    public float moveSpeed = 6f;
     public Animator animator;
+    public HealthBar healthBar;
 
-    public Vector2 targetPosition; // cursor clicked position
-    public Vector2 relativePosition;  // relativePosition - character relative position
-    //private Vector2 movement;  // movement - var that stores movement position after a click
-
-    private float firstClickTime, timeBetweenClicks;
-    private bool coroutineAllowed;
-    private int clickCounter;
+    public int maxHealth = 100;
+    public int currentHealth;
 
     private void Start()
     {
-        firstClickTime = 0f;
-        timeBetweenClicks = 0.2f;
-        clickCounter = 0;
-        coroutineAllowed = true;
+        currentHealth = maxHealth;
+        healthBar.SetMaxHealth(maxHealth);
     }
 
+    // impact on player health 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            Debug.Log("Player Impact!");
+            TakeDamage(20);
+            return;
+        }
+    }
+
+    // reload scene after player death
     void Update()
     {
-        animator.SetFloat("Speed", (Mathf.Abs(targetPosition.x - gameObject.transform.position.x)));
-
-        // set the mouse position
-        if (Input.GetKeyDown(KeyCode.Mouse0))
+        if (currentHealth == 0)
         {
-            clickCounter++;
-            targetPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            Destroy(this.gameObject);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            Debug.Log("Player Died! Try Again!");
         }
-        if (clickCounter == 1 && coroutineAllowed)
-        {
-            moveSpeed = 6;
-            firstClickTime = Time.time;
-            StartCoroutine(DoubleClickDetection());
-        }
-
-
-        // relative poistion of the target based upon the current position
-        relativePosition = new Vector2(
-            targetPosition.x - gameObject.transform.position.x,
-            targetPosition.y - gameObject.transform.position.y);
     }
 
-    private IEnumerator DoubleClickDetection()
+    // View Health on Health bar
+    public void TakeDamage(int damage)
     {
-        coroutineAllowed = false;
-        while (Time.time < firstClickTime + timeBetweenClicks)
-        {
-            if (clickCounter == 2)
-            {
-                Debug.Log("Double Click");
-                moveSpeed = 12;
-                yield return new WaitForSeconds(1.5f); // give player 2x speed for 1.5 seconds
-            }
-            else
-            {
-                yield return new WaitForEndOfFrame();
-            }
-
-        }
-        clickCounter = 0;
-        firstClickTime = 0f;
-        coroutineAllowed = true;
+        currentHealth -= damage;
+        healthBar.SetHealth(currentHealth);
     }
-
-
-    void FixedUpdate()
-    {
-        Move();
-    }
-
-    void Move()
-    {
-        transform.position = Vector2.MoveTowards(transform.position, targetPosition, Time.deltaTime * moveSpeed);
-    }
-
-    //private bool IsMoving()
-    //{
-    //    if ((Mathf.Abs(targetPosition.x - gameObject.transform.position.x) > 0.01) ^ (Mathf.Abs(targetPosition.y - gameObject.transform.position.y) > 0.01))
-    //    {
-    //        Debug.Log("Moving!");
-    //        return true;
-    //    }
-    //    else
-    //        return false;
-    //}
-
 }

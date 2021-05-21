@@ -1,7 +1,19 @@
-﻿using System.Collections;
+﻿// Tarek El Hajjaoui, Nina Valdez, Joshua Wisdom
+// CPSC 236-03
+// elhaj102@mail.chapman.edu, divaldez@chapman.edu, jowisdom@chapman.edu
+// Final Project: Untitled Platformer
+// This is our own work, we did not cheat on this assignment
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+
+
+/// <summary>
+/// This script controls enemy movement: when enemy appoaches player
+/// </summary>
+
 
 public class EnemyScript : MonoBehaviour
 {
@@ -31,7 +43,6 @@ public class EnemyScript : MonoBehaviour
         if (IsPlayerClose())
         {
             ChasePlayer();
-            IsPlayerCaptured();
         }
         else
             StartCoroutine(MoveTo());
@@ -55,10 +66,8 @@ public class EnemyScript : MonoBehaviour
                     this.TimePassed += Time.deltaTime;
                     yield return null;
                 }
-
                 this.TimePassed = 0f;
             }
-
             GetNextWaypoint();
         }
     }
@@ -97,20 +106,6 @@ public class EnemyScript : MonoBehaviour
 
     void ChasePlayer()
     {
-
         transform.position = Vector2.MoveTowards(transform.position, player.transform.position, Time.deltaTime * chaseSpeed);
-    }
-
-    private bool IsPlayerCaptured()
-    {
-        if ((Mathf.Abs(this.gameObject.transform.position.x - player.transform.position.x) < .5f) &&
-            (Mathf.Abs(this.gameObject.transform.position.y - player.transform.position.y) < .5f))
-        {
-            Debug.Log("Restart at " + Time.time);
-            SceneManager.LoadScene("AvoiderGame");
-            return true;
-        }
-        else
-            return false;
     }
 }
