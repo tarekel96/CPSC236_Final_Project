@@ -2662,6 +2662,8 @@ GameObject:
   - component: {fileID: 601620232}
   - component: {fileID: 601620227}
   - component: {fileID: 601620230}
+  - component: {fileID: 601620236}
+  - component: {fileID: 601620235}
   m_Layer: 8
   m_Name: PlayerCharacter
   m_TagString: Player
@@ -2681,16 +2683,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75a7b946b23a845abbe5c2777507c3ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controller: {fileID: 601620226}
-  rb: {fileID: 601620231}
-  animator: {fileID: 601620232}
-  runSpeed: 30
-  hasJumpPotion: 0
-  hasSpeedPotion: 0
-  potionModAmount: 0
-  jumpClip: {fileID: 8300000, guid: de60b5c3578c84aee814e7e5e6727698, type: 3}
-  dashSpeed: 35
-  startDashTime: 0.5
 --- !u!114 &601620226
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2703,34 +2695,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bc1d5602fbee44b58a2e58c676228fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_JumpForce: 700
-  m_CrouchSpeed: 0.36
-  m_MovementSmoothing: 0.05
-  m_AirControl: 0
-  m_WhatIsGround:
-    serializedVersion: 2
-    m_Bits: 1024
-  m_GroundCheck: {fileID: 1651153531}
-  m_CeilingCheck: {fileID: 165664504}
-  m_CrouchDisableCollider: {fileID: 0}
-  OnLandEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 601620225}
-        m_MethodName: OnLanding
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 1
-  OnCrouchEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_JumpForceMod: 0
 --- !u!114 &601620227
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2743,10 +2707,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7617a79744c3456d90ec2c734bf1073, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 601620232}
+  healthBar: {fileID: 1076331972}
   maxHealth: 100
   currentHealth: 100
-  animator: {fileID: 0}
-  healthBar: {fileID: 1076331972}
 --- !u!212 &601620228
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2830,10 +2794,10 @@ MonoBehaviour:
   animator: {fileID: 601620232}
   attackPoint: {fileID: 704127785}
   attackRange: 0.6
+  attackDamage: 20
   enemyLayers:
     serializedVersion: 2
     m_Bits: 512
-  attackDamage: 20
 --- !u!50 &601620231
 Rigidbody2D:
   serializedVersion: 4
@@ -2906,6 +2870,57 @@ CircleCollider2D:
   m_Offset: {x: -0.022954168, y: 0.21212566}
   serializedVersion: 2
   m_Radius: 0.14543976
+--- !u!114 &601620235
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 601620224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96aa869c365af4787ba10b90ca9a389b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_JumpForce: 400
+  m_CrouchSpeed: 0.36
+  m_MovementSmoothing: 0.05
+  m_AirControl: 0
+  m_WhatIsGround:
+    serializedVersion: 2
+    m_Bits: 1024
+  m_GroundCheck: {fileID: 1651153531}
+  m_CeilingCheck: {fileID: 165664504}
+  m_CrouchDisableCollider: {fileID: 0}
+  OnLandEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnCrouchEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_JumpForceMod: 0
+--- !u!114 &601620236
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 601620224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b41b94becef024919b28b9a8bad282f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controller: {fileID: 601620235}
+  rb: {fileID: 0}
+  animator: {fileID: 601620232}
+  jumpClip: {fileID: 8300000, guid: 37f4ddf037f7f46d5a22ce333b43aeec, type: 3}
+  runSpeed: 25
+  hasJumpPotion: 0
+  hasSpeedPotion: 0
+  potionModAmount: 0
+  dashSpeed: 0
+  startDashTime: 0
 --- !u!1 &704127784
 GameObject:
   m_ObjectHideFlags: 0
