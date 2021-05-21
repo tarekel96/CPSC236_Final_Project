@@ -11,7 +11,7 @@ public class BossMovement : MonoBehaviour
     public float timerMax = 25f;
 
     // player ~ user
-    public Player player;
+    public Level3_Player player;
     public Animator animator;
 
     // vars for enemy movement

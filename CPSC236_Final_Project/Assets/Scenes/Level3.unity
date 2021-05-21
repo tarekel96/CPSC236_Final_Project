@@ -503,13 +503,13 @@ GameObject:
   - component: {fileID: 619955087}
   - component: {fileID: 619955086}
   - component: {fileID: 619955091}
-  - component: {fileID: 619955090}
   - component: {fileID: 619955089}
   - component: {fileID: 619955092}
   - component: {fileID: 619955093}
   - component: {fileID: 619955094}
   - component: {fileID: 619955096}
   - component: {fileID: 619955095}
+  - component: {fileID: 619955090}
   m_Layer: 10
   m_Name: Monster-Trash
   m_TagString: Enemy
@@ -636,7 +636,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e51a455550de043ce9221f0fa204a6ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 619955086}
+  rb: {fileID: 0}
   timerMin: 5
   timerMax: 25
   player: {fileID: 1685721543}
@@ -9869,11 +9869,11 @@ GameObject:
   - component: {fileID: 1685721536}
   - component: {fileID: 1685721539}
   - component: {fileID: 1685721538}
-  - component: {fileID: 1685721540}
-  - component: {fileID: 1685721541}
   - component: {fileID: 1685721543}
   - component: {fileID: 1685721544}
   - component: {fileID: 1685721545}
+  - component: {fileID: 1685721541}
+  - component: {fileID: 1685721540}
   m_Layer: 9
   m_Name: Player-Ghost
   m_TagString: Player
@@ -10015,7 +10015,7 @@ MonoBehaviour:
   enemyLayers:
     serializedVersion: 2
     m_Bits: 1024
-  attackDamage: 50
+  attackDamage: 100
   attackRange: 2.5
   runSpeed: 25
   hasJumpPotion: 0
@@ -10034,7 +10034,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7bea5d91034c40f48c37806d3e84b3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_JumpForce: 425
+  m_JumpForce: 400
   m_CrouchSpeed: 0.36
   m_MovementSmoothing: 0.05
   m_AirControl: 1
@@ -10488,7 +10488,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2042616269}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.77, y: -0.24, z: 0}
+  m_LocalPosition: {x: 6.52, y: -0.49, z: 0}
   m_LocalScale: {x: 3.5, y: 3.5, z: 3.5}
   m_Children: []
   m_Father: {fileID: 0}
