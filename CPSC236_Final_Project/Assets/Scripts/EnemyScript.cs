@@ -1,19 +1,7 @@
-﻿// Tarek El Hajjaoui, Nina Valdez, Joshua Wisdom
-// CPSC 236-03
-// elhaj102@mail.chapman.edu, divaldez@chapman.edu, jowisdom@chapman.edu
-// Final Project: Untitled Platformer
-// This is our own work, we did not cheat on this assignment
-
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
-
-/// <summary>
-/// This script controls enemy movement: when enemy appoaches player
-/// </summary>
-
 
 public class EnemyScript : MonoBehaviour
 {
@@ -22,16 +10,24 @@ public class EnemyScript : MonoBehaviour
     public float Speed = 1.7f;
     public int DestinationWaypoint = 1;
     public Transform player;
+
     public Animator animator;
 
+    public int maxHealth = 100;
+    public bool isDead = false;
+
+
+    private int currentHealth;
     private Vector3 Destination;
     private bool Forwards = true;
     private float TimePassed = 0f;
-    private float chaseSpeed = 4.5f;
+    private float chaseSpeed = 2f;
 
     // Start is called before the first frame update
     void Start()
     {
+        currentHealth = maxHealth;
+
         this.Destination = this.Waypoints[DestinationWaypoint].transform.position;
     }
 
@@ -42,7 +38,8 @@ public class EnemyScript : MonoBehaviour
 
         if (IsPlayerClose())
         {
-            ChasePlayer();
+            //ChasePlayer();
+            //IsPlayerCaptured();
         }
         else
             StartCoroutine(MoveTo());
@@ -66,10 +63,36 @@ public class EnemyScript : MonoBehaviour
                     this.TimePassed += Time.deltaTime;
                     yield return null;
                 }
+
                 this.TimePassed = 0f;
             }
+
             GetNextWaypoint();
         }
+    }
+
+    public void TakeDamage(int damage)
+    {
+        currentHealth -= damage;
+
+        Debug.Log("Current enemy health: " + currentHealth);
+
+        animator.SetTrigger("Hurt");
+
+        if (currentHealth <= 0)
+        {
+            Die();
+        }
+    }
+
+    private void Die()
+    {
+        Debug.Log("Enemy died!");
+
+        animator.SetBool("IsDead", true);
+
+        GetComponent<Collider2D>().enabled = false;
+        Destroy(this.gameObject);
     }
 
     void GetNextWaypoint()
@@ -104,8 +127,21 @@ public class EnemyScript : MonoBehaviour
             return false;
     }
 
-    void ChasePlayer()
-    {
-        transform.position = Vector2.MoveTowards(transform.position, player.transform.position, Time.deltaTime * chaseSpeed);
-    }
+    //void ChasePlayer()
+    //{
+    //    transform.position = Vector2.MoveTowards(transform.position, player.transform.position, Time.deltaTime * chaseSpeed);
+    //}
+
+    //private bool IsPlayerCaptured()
+    //{
+    //    if ((Mathf.Abs(this.gameObject.transform.position.x - player.transform.position.x) < .5f) &&
+    //        (Mathf.Abs(this.gameObject.transform.position.y - player.transform.position.y) < .5f))
+    //    {
+    //        Debug.Log("Restart at " + Time.time);
+    //        SceneManager.LoadScene("AvoiderGame");
+    //        return true;
+    //    }
+    //    else
+    //        return false;
+    //}
 }
