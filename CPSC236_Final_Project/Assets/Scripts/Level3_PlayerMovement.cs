@@ -70,7 +70,15 @@ public class Level3_PlayerMovement : MonoBehaviour
         // damage them
         foreach(Collider2D enemy in hitEnemies)
         {
-            enemy.GetComponent<Level3_Enemy>().TakeDamage(attackDamage);
+            if (enemy.GetComponent<Level3_Enemy>())
+            {
+                enemy.GetComponent<Level3_Enemy>().TakeDamage(attackDamage);
+            }
+            else
+            {
+                enemy.GetComponent<Boss>().TakeDamage(attackDamage);
+            }
+
         }
     }
 

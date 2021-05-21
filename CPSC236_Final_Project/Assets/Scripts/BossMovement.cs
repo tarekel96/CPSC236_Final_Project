@@ -25,6 +25,8 @@ public class BossMovement : MonoBehaviour
     private float latestDirectionChangeTime;
     private readonly float directionChangeTime = 3f;
 
+    public bool canMove = true;
+
     public bool canAttackPlayer = false;
     bool shouldFlip = false;
 
@@ -44,6 +46,12 @@ public class BossMovement : MonoBehaviour
     void Update()
     {
         if (this == null || player == null)
+        {
+            return;
+        }
+
+
+        if (!canMove)
         {
             return;
         }
@@ -95,6 +103,11 @@ public class BossMovement : MonoBehaviour
             return;
         }
 
+        if (!canMove)
+        {
+            return;
+        }
+
         if (shouldFlip)
         {
             Flip();
@@ -105,6 +118,10 @@ public class BossMovement : MonoBehaviour
         }
     }
 
+    public void DisableMove()
+    {
+        canMove = false;
+    }
 
     void MoveTowardsPlayer()
     {

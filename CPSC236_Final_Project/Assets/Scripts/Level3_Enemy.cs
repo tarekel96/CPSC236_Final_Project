@@ -34,16 +34,21 @@ public class Level3_Enemy : MonoBehaviour
 
     void Die()
     {
-
         // die animation
         animator.SetTrigger("Monster-Trash-Die");
 
-        // dead state
-        animator.SetBool("Monster-Trash-isDead", true);
 
         // disable colliding of dead body
         GetComponent<Collider2D>().enabled = false;
         GetComponent<Level3_EnemyMovement>().DisableMove();
         this.enabled = false;
+
+        StartCoroutine(DestoryEnemy());
+    }
+
+    IEnumerator DestoryEnemy()
+    {
+        yield return new WaitForSeconds(1.5f);
+        Destroy(this.gameObject);
     }
 }
