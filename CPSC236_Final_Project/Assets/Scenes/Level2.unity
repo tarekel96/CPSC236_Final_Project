@@ -2657,7 +2657,6 @@ GameObject:
   - component: {fileID: 601620231}
   - component: {fileID: 601620234}
   - component: {fileID: 601620233}
-  - component: {fileID: 601620226}
   - component: {fileID: 601620232}
   - component: {fileID: 601620227}
   - component: {fileID: 601620230}
@@ -2670,18 +2669,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &601620226
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 601620224}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6bc1d5602fbee44b58a2e58c676228fe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &601620227
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2872,7 +2859,7 @@ MonoBehaviour:
   m_JumpForce: 400
   m_CrouchSpeed: 0.36
   m_MovementSmoothing: 0.05
-  m_AirControl: 0
+  m_AirControl: 1
   m_WhatIsGround:
     serializedVersion: 2
     m_Bits: 1024
@@ -2881,7 +2868,18 @@ MonoBehaviour:
   m_CrouchDisableCollider: {fileID: 0}
   OnLandEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 601620236}
+        m_MethodName: OnLanding
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
   OnCrouchEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -2994,7 +2992,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 0b0a24122665e41d7ba6582253800e75, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 51f04e10280cf45ee824e7470e746267, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4244,6 +4242,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ToothMonster1 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8437968498364524787, guid: 4da424c5719eb48c7a47083c195fbb36,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 601620224}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4da424c5719eb48c7a47083c195fbb36, type: 3}
 --- !u!1 &1076331970
@@ -4283,7 +4286,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -436.8, y: 306}
+  m_AnchoredPosition: {x: -366.1, y: 271.1}
   m_SizeDelta: {x: 261.22498, y: 45.211243}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1076331972
@@ -4446,6 +4449,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ToothMonster1 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 8437968498364524787, guid: 4da424c5719eb48c7a47083c195fbb36,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 601620224}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4da424c5719eb48c7a47083c195fbb36, type: 3}
 --- !u!1001 &1497533640
@@ -4530,6 +4538,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ToothMonster1 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 8437968498364524787, guid: 4da424c5719eb48c7a47083c195fbb36,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 601620224}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4da424c5719eb48c7a47083c195fbb36, type: 3}
 --- !u!1 &1543722187
@@ -4588,7 +4601,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 1980d3ded968f4094a68cc44167eb3a4, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2f1e23565e2094d83a1fef3aa7518160, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
