@@ -12,13 +12,6 @@ public class EnemyMovement : MonoBehaviour
 
     // player ~ user
     public Player player;
-    // vars for enemy bullets
-    //private int numOfBullets = 0;
-    //private int MAX_NUM_OF_BULLETS = 3;
-    //public bool canFireBullets = true;
-    //private float timerBullet;
-    //private float maxTimerBullet;
-    //public GameObject bullet;
 
     // vars for enemy movement
     private Vector2 relativePosition;
@@ -30,6 +23,8 @@ public class EnemyMovement : MonoBehaviour
     private Vector2 movementPerSecond;
     private float latestDirectionChangeTime;
     private readonly float directionChangeTime = 3f;
+
+    public bool canMove = true;
 
     public bool canAttackPlayer = false;
     bool shouldFlip = false;
@@ -44,18 +39,21 @@ public class EnemyMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         rb.velocity = new Vector2(moveSpeed, moveSpeed);
         canAttackPlayer = false;
-        //timerBullet = 0;
-        //maxTimerBullet = Random.Range(timerMin, timerMax);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(this == null || player == null)
+        if (this == null || player == null)
         {
             return;
         }
-        
+
+        if (!canMove)
+        {
+            return;
+        }
+
         if (player != null)
         {
             // relative poistion of the target (player) based upon the current position
@@ -66,12 +64,10 @@ public class EnemyMovement : MonoBehaviour
 
         if (relativePosition.x < enemyDetectionRadius && relativePosition.y < enemyDetectionRadius)
         {
-            //canFireBullets = true;
             canAttackPlayer = true;
         }
         else
         {
-            //canFireBullets = false;
             canAttackPlayer = false;
             //if the changeTime was reached, calculate a new movement vector
             if (Time.time - latestDirectionChangeTime > directionChangeTime)
@@ -96,20 +92,20 @@ public class EnemyMovement : MonoBehaviour
                 shouldFlip = false;
             }
         }
-
-        if (this != null && canAttackPlayer)
-        {
-            //StartCoroutine("FireBullet");
-        }
-        // destroys enemy once it gets out of camera viewport
-        //if (Camera.main.WorldToViewportPoint(transform.position).x < 0)
-        //{
-        //    Destroy(this.gameObject);
-        //}
     }
 
     private void FixedUpdate()
     {
+        if(this == null)
+        {
+            return;
+        }
+
+        if (!canMove)
+        {
+            return;
+        }
+
         if (shouldFlip)
         {
             Flip();
@@ -124,41 +120,11 @@ public class EnemyMovement : MonoBehaviour
         }
     }
 
-    // logic handling enemy collisions
-    private void OnCollisionEnter2D(Collision2D collision)
+    public void DisableMove()
     {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            Vector2 bounceVector = new Vector2(-5, 5);
-            rb.AddForce(bounceVector, ForceMode2D.Impulse);
-
-            player.TakeDamage(20);
-        }
+        canMove = false;
     }
 
-
-    //void SpawnBullet()
-    //{
-    //    numOfBullets++;
-    //    Vector3 spawnPoint = transform.position;
-    //    spawnPoint.y -= (bullet.GetComponent<Renderer>().bounds.size.y / 2) + (GetComponent<Renderer>().bounds.size.y / 2);
-    //    GameObject.Instantiate(bullet, spawnPoint, transform.rotation);
-    //}
-
-    //IEnumerator FireBullet()
-    //{
-    //    if (timerBullet >= maxTimerBullet)
-    //    {
-    //        // spawn an enemy
-    //        SpawnBullet();
-    //        timerBullet = 0;
-    //        maxTimerBullet = Random.Range(timerMin, timerMax);
-    //    }
-
-    //    timerBullet += 0.1f;
-    //    // yield for CoRoutine
-    //    yield return new WaitForSeconds(0.5f);
-    //}
 
     void MoveTowardsPlayer()
     {
@@ -170,14 +136,6 @@ public class EnemyMovement : MonoBehaviour
         {
             enemyMovement.x = moveSpeed * Mathf.Sign(relativePosition.x);
         }
-        //if (moveSpeed * Time.deltaTime >= Mathf.Abs(relativePosition.y))
-        //{
-        //    enemyMovement.y = relativePosition.y;
-        //}
-        //else
-        //{
-        //    enemyMovement.y = moveSpeed * Mathf.Sign(relativePosition.y);
-        //}
 
         rb.velocity = enemyMovement;
     }

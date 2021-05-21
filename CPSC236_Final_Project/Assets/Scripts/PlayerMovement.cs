@@ -7,8 +7,15 @@ public class PlayerMovement : MonoBehaviour
     
     public CharacterController2D controller;
     public Rigidbody2D rb;
+
     public Animator animator;
-    private bool isAttacking = false;
+
+    public Transform attackPoint;
+    public LayerMask enemyLayers;
+
+    public int attackDamage = 100;
+    public float attackRange = 2.5f;
+
     public float runSpeed = 25f;
     public bool hasJumpPotion = false;
     public bool hasSpeedPotion = false;
@@ -30,8 +37,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
-            isAttacking = true;
-            StartCoroutine(ToggleAttackAnimation());
+            Attack();
         }
 
         horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
@@ -46,6 +52,36 @@ public class PlayerMovement : MonoBehaviour
         {
                 jump = true;
         }
+    }
+
+    void Attack()
+    {
+        // play attack animation
+        animator.SetTrigger("AttackTrigger");
+
+        // detect enemies in range of attack
+        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
+
+        if(hitEnemies == null)
+        {
+            return;
+        }
+
+        // damage them
+        foreach(Collider2D enemy in hitEnemies)
+        {
+            enemy.GetComponent<Enemy>().TakeDamage(attackDamage);
+        }
+    }
+
+    void OnDrawGizmosSelected()
+    {
+        if(attackPoint == null)
+        {
+            return;
+        }
+
+        Gizmos.DrawWireSphere(attackPoint.position, attackRange);
     }
 
     public void OnLanding()
@@ -64,35 +100,4 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    private IEnumerator ToggleAttackAnimation()
-    {
-        if (isAttacking)
-        {
-            isAttacking = true;
-            animator.SetBool("Attack", true);
-            yield return new WaitForSeconds(0.9f);
-        }
-        animator.SetBool("Attack", false);
-        yield return new WaitForEndOfFrame();
-        isAttacking = false;
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Enemy"))
-        {
-            Debug.Log("Is colliding");
-
-            if (Input.GetKeyDown(KeyCode.Mouse0) || isAttacking)
-            {
-                Debug.Log("Is colliding and attacking");
-                Destroy(collision.gameObject);
-            }
-            else
-            {
-                Vector2 bounceVector = new Vector2(-10, 10);
-                rb.AddForce(bounceVector, ForceMode2D.Impulse);
-            }
-        }
-    }
 }
